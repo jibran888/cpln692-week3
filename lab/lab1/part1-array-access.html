@@ -74,10 +74,22 @@
     Start code
 
     ===================== */
+    var restaurantData = [
+      [39.973810, -75.133765, "Suraya"],
+      [39.950862, -75.168008, "Abe Fisher"],
+      [39.949474, -75.169125, "Spice Finch"]
+    ];
 
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
-    L.marker([0, 0]).addTo(map);
+    var makeAMarker = (obj) =>
+    {return L.marker
+    ([obj[0], obj[1]]).bindPopup( obj[2])}
+
+    var markers = restaurantData.map(makeAMarker)
+
+    markers.forEach((marker) => {marker.addTo(map)})
+
+    addMarkers(map,restaurantData);
+
 
     /* =====================
 
