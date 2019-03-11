@@ -14,7 +14,7 @@
     <!--javascript imports-->
     <script src="leaflet.js"></script>
     <script src="part3-data-clean.js"></script>
-    <script src="part4-data-dirty.js"></script>
+    <script src="part3-data-dirty.js"></script>
 
     <script>
 
@@ -63,13 +63,14 @@
 
     ===================== */
 
-    var data = bikeArrayDirty;
+    //var data = bikeArrayDirty;
 
     /* =====================
 
     Start code to filter data
 
     ===================== */
+
 
 
 
@@ -98,7 +99,43 @@
 
     ===================== */
 
+    // first will work with bikeArrayClean
+    //var dataClean = bikeArrayClean;
 
+   //shortArr = [1, 2, 3, 4];
+
+  //  var dbl = (x) => {return x*2};
+
+  //  dbl(shortArr)
+    //_.map(shortArr,dbl)
+
+    // print the name of each station to the browser
+    var stationName = (arr) => {for (var i = 1; i < bikeArrayClean.length; i = i+1){
+      console.log(arr[i][2])
+    }
+    }
+
+    stationName(bikeArrayClean)
+
+    // now print on map the marker for each item in array
+
+    var pointsOnMap = (arr) => {for (var i = 1; i < bikeArrayClean.length; i = i+1){
+      L.marker([arr[i][1], arr[i][0]]).addTo(map)
+    }}
+
+    pointsOnMap(bikeArrayClean)
+
+
+    //L.marker([bikeArrayClean[0][1], bikeArrayClean[0][0]]).addTo(map);
+
+    //var mapAll =
+
+
+    //var mapBikes = for(var i = 0; i < BikeArrayClean.length; i++){
+    //  if (bikeArrayClean[i][3]>20){
+    //    mapBikes.push(bikeArrayClean[i]);
+    //  }
+  //  }
 
     /* =====================
 
